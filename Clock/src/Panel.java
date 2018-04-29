@@ -10,6 +10,7 @@ import java.util.Date;
 
 import javax.swing.JPanel;
 
+
 public class Panel extends JPanel implements Runnable {
 	final int circleX;
 	final int circleY;

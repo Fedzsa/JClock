@@ -5,6 +5,7 @@ import java.awt.event.WindowListener;
 
 import javax.swing.JFrame;
 
+
 public class Gui extends JFrame implements WindowListener {
 	Panel p;
 	Thread t;
