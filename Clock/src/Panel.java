@@ -1,30 +1,26 @@
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
-import java.util.Calendar;
 import java.util.Date;
-
 import javax.swing.JPanel;
 
 
 public class Panel extends JPanel implements Runnable {
-	final int circleX;
-	final int circleY;
-	int x = 0, y = 0;
-	int x2 = 0, y2 = 0;
-	int secondx = 0, secondy = 0;
-	int minutex = 0, minutey = 0;
-	int hourx = 0, houry = 0;
-	Date date;
-	LocalTime t;
-	SimpleDateFormat f;
-	SimpleDateFormat f2;
-	String time;
-	String d;
+	private static final long serialVersionUID = 1L;
+	private final int circleX;
+	private final int circleY;
+	private int x = 0, y = 0;
+	private int x2 = 0, y2 = 0;
+	private int secondx = 0, secondy = 0;
+	private int minutex = 0, minutey = 0;
+	private int hourx = 0, houry = 0;
+	private Date date;
+	private LocalTime t;
+	private SimpleDateFormat f;
+	private SimpleDateFormat f2;
+	private String time;
+	private String d;
 	
 	
 	public Panel() {
@@ -39,7 +35,6 @@ public class Panel extends JPanel implements Runnable {
 		
 		analogTime();
 		
-		//setBackground(Color.BLUE);
 		setBounds(0, 0, 400, 400);
 		setLayout(null);
 	}
@@ -86,7 +81,7 @@ public class Panel extends JPanel implements Runnable {
 		houry = (int)((circleY) - (80 * (Math.cos(h * (Math.PI / 180)))));
 	}
 	
-	public synchronized void analogTime() {
+	public void analogTime() {
 		date = new Date();
 		t = LocalTime.now();
 		time = f.format(date);
